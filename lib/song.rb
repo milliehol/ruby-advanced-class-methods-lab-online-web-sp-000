@@ -6,8 +6,8 @@ class Song
     @@all
   end
 
-  def self.create
-     song = self.new
+  def self.create(song)
+     song = self.new(song)
      self.all << song
      song
    end
@@ -24,7 +24,7 @@ class Song
    song
   end
 
-  def self.find_by_name(title) 
+  def self.find_by_name(title)
       result = self.all.detect {|song| song.name == title}
       result
     end
